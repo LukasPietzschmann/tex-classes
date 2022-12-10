@@ -1,5 +1,7 @@
 This is my little (and hopefully growing) collection of TeX classes I use.
 
+For beamer themes, look at [awesome-beamer](https://github.com/LukasPietzschmann/awesome-beamer).
+
 ## exercise
 ### Options
 This class provides some settings you can tweak:
