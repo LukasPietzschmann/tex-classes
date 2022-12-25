@@ -20,6 +20,7 @@
 	\@english@false
 }
 
+\DeclareBoolOption{solution}
 \DeclareBoolOption{uulm}
 
 \ProcessKeyvalOptions*
@@ -42,9 +43,21 @@
 \RequirePackage[strict, autostyle]{csquotes}
 \RequirePackage{setspace}
 \RequirePackage{lastpage}
+\RequirePackage{emoji}
+\RequirePackage{environ}
 
 \RequirePackage{xcolor}
 \definecolor{red}{HTML}{a51d2d}
+
+\RequirePackage{listings}
+\RequirePackage[verbatim=true]{lstfiracode}
+\lstset{
+	style=FiraCodeStyle,
+	basicstyle=\ttfamily,
+	commentstyle=\color{gray}\itshape,
+	keywordstyle=\color{red}\bfseries,
+	escapeinside={<!}{!>},
+}
 
 \RequirePackage[inline]{enumitem}
 \newlist{tasks}{enumerate}{1}
@@ -204,6 +217,24 @@
 		#2
 	\end{itemize}
 }
+
+\newcommand{\inlinesolution}[1]{%
+	\if@solution%
+		\hfill\break\rotatebox[origin=c]{45}{\emoji{pencil}}~#1~\rotatebox[origin=c]{225}{\emoji{pencil}}%
+	\fi
+}
+
+% This does not work with verbatim content :(
+\NewEnviron{solution}{
+	\if@solution\hfill\break%
+	\emoji{pencil}%
+	\begin{addmargin}[1em]{0em}%
+		\BODY%
+	\end{addmargin}%
+	\rotatebox[origin=c]{180}{\reflectbox{\emoji{pencil}}}%
+	\fi
+}
+
 
 \newcommand*{\uulmlogo}[0]{%
 	\begin{tikzpicture}[yscale=-1, every path/.style={fill=black, even odd rule}]
