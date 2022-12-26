@@ -133,6 +133,9 @@
 \newkomafont{uni}{\footnotesize\slshape}
 
 \setmainfont{FiraSans}
+\setmonofont{Fira Code}[
+	Contextuals=Alternate
+]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
