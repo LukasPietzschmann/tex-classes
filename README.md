@@ -4,8 +4,14 @@ This is my little (and hopefully growing) collection of TeX classes I use.
 ### Options
 This class provides some settings you can tweak:
 - Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
-- Solutions: Often you want to compile two versions of your exercise sheet: One with all solutions and one without. You can easily do this by wrapping all solutions
-inside the `solution` environment or the `\inlinesolution` command. You can then pass the `solution` option to `\documentclass` to compile with all solutions, or by omitting
+- Solutions: Often you want to compile two versions of your exercise sheet: One with all solutions and one without. To do this, this class provides three different ways:
+	- The environment `solution`: This is intended for longer solutions, that span more than one lines.
+	- The command `\onelinesolution`: This should be used for short solutions that only span one line.
+	- The command `\inlinesolution`: For even shorter solutions, this is the way to go.
+
+`\onelinesolution` and `\inlinesolution` only differ in one small detail. The first one prints it's content in a new line, while the latter does not do this.
+
+You can then pass the `solution` option to `\documentclass` to compile with all solutions, or by omitting
 this option, your solutions are not shown.
 - uulm: You can set this flag if you're studying at the University of Ulm. This puts the university's logo in the top right corner.
 

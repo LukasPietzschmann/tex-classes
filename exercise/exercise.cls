@@ -44,7 +44,7 @@
 \RequirePackage{setspace}
 \RequirePackage{lastpage}
 \RequirePackage{emoji}
-\RequirePackage{environ}
+\RequirePackage{comment}
 
 \RequirePackage{xcolor}
 \definecolor{red}{HTML}{a51d2d}
@@ -218,23 +218,32 @@
 	\end{itemize}
 }
 
-\newcommand{\inlinesolution}[1]{%
+\newcommand{\shortsolution}[2]{%
 	\if@solution%
-		\hfill\break\rotatebox[origin=c]{45}{\emoji{pencil}}~#1~\rotatebox[origin=c]{225}{\emoji{pencil}}%
+		#2\rotatebox[origin=c]{45}{\emoji{pencil}}~#1~\rotatebox[origin=c]{225}{\emoji{pencil}}%
 	\fi
 }
 
-% This does not work with verbatim content :(
-\NewEnviron{solution}{
-	\if@solution\hfill\break%
-	\emoji{pencil}%
-	\begin{addmargin}[1em]{0em}%
-		\BODY%
-	\end{addmargin}%
-	\rotatebox[origin=c]{180}{\reflectbox{\emoji{pencil}}}%
-	\fi
+\newcommand{\inlinesolution}[1]{%
+	\shortsolution{#1}{}
 }
 
+\newcommand{\onelinesolution}[1]{%
+	\shortsolution{#1}{\hfill\break}
+}
+
+\if@solution
+	\newenvironment{solution}{
+		\hfill\break%
+		\emoji{pencil}%
+		\begin{addmargin}[1em]{0em}%
+	}{
+		\end{addmargin}
+		\rotatebox[origin=c]{180}{\reflectbox{\emoji{pencil}}}%
+	}
+\else
+	\excludecomment{solution}
+\fi
 
 \newcommand*{\uulmlogo}[0]{%
 	\begin{tikzpicture}[yscale=-1, every path/.style={fill=black, even odd rule}]
