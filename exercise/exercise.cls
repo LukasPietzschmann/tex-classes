@@ -61,7 +61,8 @@
 
 \RequirePackage[inline]{enumitem}
 \newlist{tasks}{enumerate}{1}
-\setlist[tasks, 1]{label=\itshape\alph*)~}
+% Penalties between tasks motivate TeX to break between tasks and not inside a task
+\setlist[tasks, 1]{label=\itshape\alph*)~, midpenalty=-1000}
 \setlist[itemize, 1]{label=$\bullet$}
 
 \RequirePackage{tikz}
