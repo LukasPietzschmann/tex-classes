@@ -127,6 +127,7 @@
 \setkomafont{title}{\Large\bfseries}
 \setkomafont{author}{\normalsize}
 \setkomafont{disposition}{\Large\bfseries}
+\setkomafont{section}{\Large\bfseries}
 \setkomafont{subsection}{\large\mdseries}
 \newkomafont{topic}{\normalsize\slshape}
 \newkomafont{institute}{\footnotesize\slshape}
@@ -239,10 +240,12 @@
 \if@solution
 	\newenvironment{solution}{
 		\hfill\break%
+		\begin{samepage}
 		\emoji{pencil}%
 		\begin{addmargin}[1em]{0em}%
 	}{
 		\end{addmargin}
+		\end{samepage}
 		\rotatebox[origin=c]{180}{\reflectbox{\emoji{pencil}}}%
 	}
 \else
