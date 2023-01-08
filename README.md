@@ -1,5 +1,11 @@
 This is my little (and hopefully growing) collection of TeX classes I use.
 
+## article
+This class is based on koma-sctips scrartcl. I mainly used it for my bachelors thesis so it's kinda tailored to this.
+### Options
+This class provides some settings you can tweak:
+- Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
+
 ## exercise
 ### Options
 This class provides some settings you can tweak:
