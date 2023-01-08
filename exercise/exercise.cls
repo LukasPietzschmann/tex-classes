@@ -52,6 +52,8 @@
 \RequirePackage{listings}
 \RequirePackage[verbatim=true]{lstfiracode}
 \lstset{
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 	style=FiraCodeStyle,
 	basicstyle=\ttfamily,
 	commentstyle=\color{gray}\itshape,
@@ -68,9 +70,19 @@
 \RequirePackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, arrows.meta, shapes, automata, positioning, positioning, fit, calc, fadings, overlay-beamer-styles}
 \tikzstyle{inline} = [shape=rectangle,inner sep=0pt,text depth=0pt]
-\tikzstyle{squarednode} = [rectangle, draw=black, minimum size=5mm]
+\tikzstyle{squarenode} = [rectangle, draw=black, line width=0.6pt]
+\tikzstyle{roundednode} = [squarenode, rounded corners=1mm]
+\tikzstyle{roundnode} = [squarenode, circle]
 \tikzstyle{arrow} = [thick,->,>=stealth]
-\tikzstyle{textarrow} = [awesomegray,thick,->,-{Kite[open]}]
+\tikzstyle{textarrow} = [awesomegray,shorten >=1mm,shorten <=1mm,thick,->,-{Kite[open]}]
+\tikzstyle{thickarrow} = [
+	thick,
+	decoration={markings, mark=at position 1 with {\arrow[scale=2]{open triangle 60}}},
+	double distance=5pt,
+	shorten >= 13pt,
+	preaction = {decorate},
+	postaction = {draw, line width=5pt, white, shorten >= 7pt}
+]
 
 \RequirePackage[draft=false]{scrlayer-scrpage}
 \RequirePackage[pdfborder=0 0 0,colorlinks=true,allcolors=black]{hyperref}
@@ -107,6 +119,7 @@
 
 \defpairofpagestyles[scrheadings]{ex@main}{
 	\KOMAoptions{headsepline=true}
+	\KOMAoptions{footsepline=false}
 	\ifoot{\href{mailto:\@email}{\@author}}
 	\cfoot{}
 	\ofoot{\if@english@ Page \else Seite \fi \thepage~/~\pageref{LastPage}}
@@ -196,6 +209,7 @@
 	{\usekomafont{title}\@topic}
 	\hfill
 	{\color{gray}\if@english@ Due to \else Fällig am \fi \@duedate}
+	\vspace{1em}
 }
 
 
