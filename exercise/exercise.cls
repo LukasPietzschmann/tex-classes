@@ -1,6 +1,6 @@
 \ProvidesClass{sheet-layout}[Kinda awesome exercise sheet class]
 
-\LoadClass[11pt, DIV=14, a4paper, english, parskip=half]{scrartcl}
+\LoadClass[11pt, DIV=14, parskip=half]{scrartcl}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,6 +172,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\renewcommand{\descriptionlabel}[1]{\bfseries#1}
+
 \renewcommand{\maketitle}{%
 	\vspace*{\dimexpr-\headheight-2.33\baselineskip}
 		\begin{minipage}[c]{\if@uulm0.5\linewidth\else\linewidth\fi}
@@ -202,26 +204,16 @@
 
 
 \newcounter{excounter}
-\newenvironment{exercise}[1]{%
-	\refstepcounter{excounter}%
+\newenvironment{exercise}[2][\empty]{%
+	\ifx#1\empty
+		\refstepcounter{excounter}%
+	\fi
 	\vspace{2em}
 	\relax\parbox\linewidth{
-		{\usekomafont{disposition}\if@english@ Exercise \else Aufgabe \fi \arabic{excounter}}\quad{\usekomafont{subsection}\textcolor{gray}{#1}}
+		{\usekomafont{disposition}\ifx#1\empty\if@english@ Exercise\else Aufgabe\fi \arabic{excounter}\else#1\fi}\quad{\usekomafont{subsection}\textcolor{gray}{#2}}
 	}
 	\par
 }{\par}
-
-\newcommand{\LearningGoals}[2][2]{%
-	\if@english@
-		\section*{Learning Outcomes}
-	\else
-		\section*{Lernziele}
-	\fi
-	\vspace*{-2\parskip}
-	\begin{itemize}
-		#2
-	\end{itemize}
-}
 
 \newcommand{\shortsolution}[2]{%
 	\if@solution%
