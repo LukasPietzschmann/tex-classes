@@ -7,6 +7,7 @@ This class provides some settings you can tweak:
 - Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
 
 ## exercise
+This class is pretty loosely based on koma-sctips scrartcl. I tried to make it look friendly, so the exercises on it can be even more evil ;)
 ### Options
 This class provides some settings you can tweak:
 - Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
