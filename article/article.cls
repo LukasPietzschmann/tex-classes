@@ -195,7 +195,7 @@
 \renewcommand{\maketitle}{
 	\begin{titlepage}
 		\centering%
-		\includegraphics[scale=0.3]{\@logo}%
+		\includegraphics[width=\textwidth, height=2.5cm, keepaspectratio]{\@logo}%
 		\vspace{20mm}%
 		\hrule%
 		\begin{spacing}{2}%
@@ -214,9 +214,9 @@
 		\end{minipage}%
 		\begin{minipage}[t]{0.4\textwidth}%
 			\begin{flushright}\large%
-				\emph{Erstgutachter:}\break%
+				\emph{\if@english@ Examiner\else  Erstgutachter\fi:}\break%
 				\@supervisorone\break%
-				\emph{Zweitgutachter:}\break%
+				\emph{\if@english@ Second Examiner\else  Zweitgutachter\fi:}\break%
 				\@supervisortwo%
 			\end{flushright}%
 		\end{minipage}\break%
@@ -224,7 +224,7 @@
 		\@date%
 		\vfill%
 		\@uni\break%
-		Studiengang \@course%
+		\if@english@ Course\else Studiengang\fi~\@course%
 	\end{titlepage}
 }
 
