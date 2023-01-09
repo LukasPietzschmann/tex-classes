@@ -6,6 +6,9 @@ This class is based on koma-scrips scrartcl. I mainly used it for my bachelors t
 This class provides some settings you can tweak:
 - Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
 
+Look at ![example.pdf](https://github.com/LukasPietzschmann/tex-classes/blob/master/article/example.pdf) to see an example document and at
+![example.tex](https://github.com/LukasPietzschmann/tex-classes/blob/master/article/example.tex) to see how it was made.
+
 # exercise
 This class is pretty loosely based on koma-scrips scrartcl. I tried to make it look friendly, so the exercises on it can be even more evil ;)
 ### Options
