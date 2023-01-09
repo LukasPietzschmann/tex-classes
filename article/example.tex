@@ -1,0 +1,57 @@
+\documentclass[english]{article}
+
+\title{What an awesome Title for a Paper}
+\author{Lukas Pietzschmann}
+
+\uni{University of Ulm}
+\matrnr{12345}
+\type{Master Thesis}
+\date{01.01.2023}
+\course{Computer Science}
+\supervisorone{Prof. Dr. Maxi Mustermann}
+\supervisortwo{Prof. Dr. Susanne Sonntag}
+\logo{pics/logo.png}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\thispagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\listoffigures
+\lstlistoflistings
+
+\newpage
+
+\thispagestyle{empty}
+\section*{Abstract}
+Here comes my cool and very interesting abstract, that will describe what this paper is all about
+and will definitely make you wanna read it!
+
+\emptypage
+
+\thispagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\section{Section One}
+
+\lipsum{1}
+\par
+Here comes some code:
+
+\begin{lstlisting}[language=c++, caption=Ooof what a nice peace of code]
+Value* all_brackets = ir_builder->CreateAlloca(utils::get_ptr_type(predef_structures::bracket()), utils::get_integer_constant(bracket_ptrs.size()));
+for(int i = 0; i < bracket_ptrs.size(); ++i)
+	utils::insert_into(all_brackets, bracket_ptrs.at(i), i);
+return brackets;
+\end{lstlisting}
+
+\end{document}
