@@ -45,8 +45,9 @@
 \RequirePackage{lastpage}
 \RequirePackage{emoji}
 \RequirePackage{comment}
+\RequirePackage{float}
 
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor}
 \definecolor{red}{HTML}{a51d2d}
 
 \RequirePackage{listings}
@@ -224,7 +225,7 @@
 	\fi
 	\vspace{2em}
 	\relax\parbox\linewidth{
-		{\usekomafont{disposition}\ifx#1\empty\if@english@ Exercise\else Aufgabe\fi \arabic{excounter}\else#1\fi}\quad{\usekomafont{subsection}\textcolor{gray}{#2}}
+		{\usekomafont{disposition}\ifx#1\empty\if@english@ Exercise\else Aufgabe\fi~\arabic{excounter}\else#1\fi}\quad{\usekomafont{subsection}\textcolor{gray}{#2}}
 	}
 	\par
 }{\par}
@@ -248,7 +249,7 @@
 		\hfill\break%
 		\begin{samepage}
 		\emoji{pencil}%
-		\begin{addmargin}[1em]{0em}%
+		\begin{addmargin}[1em]{1em}%
 	}{
 		\end{addmargin}
 		\end{samepage}
