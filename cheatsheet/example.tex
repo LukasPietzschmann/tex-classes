@@ -1,0 +1,174 @@
+\documentclass[columns=3]{cheatsheet}
+
+\title{Python-Cheatsheet}
+\author{Lukas Pietzschmann}
+\email{lukas.pietzschmann@uni-ulm.de}
+\date{12.01.2022}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+Dieses kurze Cheat-Sheet fasst die wichtigsten Konzepte von Python3 mithilfe
+prägnanter Beispiele zusammen. Vor allem werden hier allerdings für die Übung relevante Dinge vorgestellt.
+
+\section{Variablen}
+Im Gegensatz zu vielen anderen Programmiersprachen müssen in Python Variablen nicht explizit deklariert
+werden. Variablen sind ab ihrer ersten Initialisierung verwendbar.\par
+Typen müssen dabei nie explizit angegeben werden! Folgendes Beispiel zeigt einige relevante Typen:
+\begin{lstlisting}[language=python]
+s = "ich bin ein String"
+i = 42       #int
+f = 3.1415   #float
+\end{lstlisting}
+
+\section{Funktionen}
+Funktionen sind wie auch Variablen ungetypt. Sie können mit dem Schlüsselwort \lstinline[language=python]{def}
+erstellt werden.
+\begin{lstlisting}[language=python]
+def fib(n):
+	if n == 1 or n == 0:
+		return 0
+	else
+		return fib(n-1) + fib(n-2)
+
+fib(100) # <!\bot!>
+\end{lstlisting}
+
+\section{Anonyme Funktionen (lambdas)}
+Wie viele modernen Sprachen unterstützt auch Python Konzepte der funktionalen Programmierung. Lambdas sind eines davon.\par
+Eine (anonyme) Funktion kann dabei mit dem Schlüsselwort \lstinline[language=python]{lambda} erzeugt werden.
+\begin{lstlisting}[language=python]
+fun = lambda a, b: a + b
+fun(1, 2) # 3
+\end{lstlisting}
+Da Lambdas ausschließlich Ausrücke und keine Statements enthalten dürfen und dadurch recht eingeschränkt sind, werden sie häufig
+dazu verwendet simple Funktionen an andere Funktionen als Argument zu übergeben.
+\begin{lstlisting}[language=python]
+map(lambda elem: print(elem), [1, 2, 3])
+# 1 2 3
+\end{lstlisting}
+
+
+\section{Listen}
+Listen sind in Python nicht in ihrer Größe beschränkt und können Daten mit unterschiedlichen Typen enthalten.
+\begin{lstlisting}[language=python]
+l = [1, 2]
+l.append(3)
+print(l)    # [1, 2, 3]
+l.pop()
+print(l)    # [1, 2]
+\end{lstlisting}
+
+\section{Tupel}
+Tupel sind recht ähnlich zu Listen, mit dem Unterschied, dass sie nach ihrer Erstellung nicht mehr verändert
+werden können.
+\begin{lstlisting}[language=python]
+t = (1, 2, 3)
+\end{lstlisting}
+
+\section{Operationen auf Listen und Tupeln}
+Tupel und Listen (und viele anderen Datenstrukturen) teilen sich einige Operationen die auf ihnen zulässig sind.
+Hier eine kleine Auswahl der wichtigsten:
+
+\begin{description}
+	\item[Element-Zugriff] Mit dem Klammer-Operator \texttt{[]} können Elemente anhand ihres Indexes ausgewählt werden.
+		Dabei wird ab 0 indiziert.
+		\begin{lstlisting}[language=python]
+l = [1, 2, 3]
+print(l[0]) # 1
+		\end{lstlisting}
+
+	\item[Slicing] Soll nicht nur ein Element, sondern gleich mehrere abgefragt werden, kann ebenfalls der Klammer-Operator
+		mit einem Slice verwendet werden. Die Syntax sieht folgendermaßen aus: \texttt{[<start>:<ende>:<schrittweite>]}.
+		Dabei ist jeder Parameter Optional
+		\begin{lstlisting}[language=python]
+l = [1, 2, 3]
+print(l[1:]) # [2, 3]
+print(l[:1]) # [1]
+print(l[::2]) # [1, 3]
+		\end{lstlisting}
+
+	\item[Iteration] Soll eine Operation für jedes Element einer Liste oder eines Tupels ausgeführt werden, kann eine
+		\lstinline[language=python]{for}-Schleife verwendet werden.
+		\begin{lstlisting}[language=python]
+l = [1, 2, 3]
+for i in l:
+	print(i) # 1 2 3
+		\end{lstlisting}
+\end{description}
+
+\section{Imports}
+Um andere Dateien zu importieren kann das Schlüsselwort \lstinline[language=python]{import} verwendet werden.
+\begin{lstlisting}[language=python]
+import math
+print(math.pi) # 3.14...
+\end{lstlisting}
+Sollen nicht alle Symbole der Datei, sondern nur eine ausgewählte Menge importiert werden, kann zusätzlich
+\lstinline[language=python]{from} verwendet werden.
+\begin{lstlisting}[language=python]
+from math import pi
+print(pi) # 3.14...
+\end{lstlisting}
+
+\section{Diverse Details}
+\begin{description}
+	\item[Code-Struktur] Python geht den ungewöhnlichen Weg und kennzeichnet Blöcke an Code nicht durch geschweifte
+		Klammern, sondern durch Einrückung. Die Anzahl der Tabs (oder Leerzeichen) ist dabei erstmal egal, sollte
+		aber konsistent bleiben.
+	\item[Main-Funktion] Python besitzt keine echte Main-Funktion. Code wird einfach von der ersten Zeile ab gelesen
+		und ausgeführt. Folgender Trick kann allerdings eine Main-Funktion halbwegs gut emulieren:
+		\begin{lstlisting}[language=python]
+def main():
+	print("Hallo Welt")
+
+if __name__=="__main__":
+	main()
+		\end{lstlisting}
+	\item[Topkonvertierung] In der Übung wird es einige Stellen geben an denen Strings zu Zahlen umgewandelt werden sollen.
+		Hier das Vorgehen:
+		\begin{lstlisting}[language=python]
+s = "420"
+i = int(s)
+		\end{lstlisting}
+		Das Umwandeln von Typen funktioniert in der Regel immer über deren Konstruktoren.
+
+\section{Hilfreiche Funktionen und Methoden}
+Hier eine kleine Auswahl nützlicher Funktionen und Methoden:
+\begin{description}
+	\item[print] Die \lstinline[language=python]{print}-Funktion gibt die übergebenen Argumente als Text auf der Standardausgabe aus.
+	\item[split] Diese Methode kann auf Strings aufgerufen werden und teilt den String an dem übergebenen Trenner.
+		\begin{lstlisting}[language=python]
+s = "Hallo Welt!"
+elems = s.split(" ")
+for e in elems:
+	print(e) # "Hallo" "Welt"
+		\end{lstlisting}
+	\item[upper, lower] Diese Methode (ebenfalls aus der String-Klasse) geben einen neuen String zurück, der nur aus Groß-, beziehungsweise
+		Kleinbuchstaben besteht.
+		\begin{lstlisting}[language=python]
+s = "LoL"
+print(s.lower()) # "lol"
+print(s.upper()) # "LOL"
+		\end{lstlisting}
+	\item[join] \texttt{join} ist wieder eine Methode die auf Strings angewendet werden kann. Die bekommt eine Liste an beliebigen Elementen
+		übergeben und konkateniert diese mit dem String als Trenner.
+		\begin{lstlisting}[language=python]
+print(";".join([1, 2, 3])) # "1;2;3"
+		\end{lstlisting}
+	\item[range] Diese Funktion kann dabei helfen eine \enquote{\textit{traditionelle}} For-Schleife zu emulieren.
+		Sie kann wie folgt verwendet werden:
+		\begin{lstlisting}[language=python]
+for i in range(1, 3):
+	print(i) # 1 2 3
+		\end{lstlisting}
+\end{description}
+
+
+
+\end{description}
+
+
+\end{document}
