@@ -50,6 +50,12 @@
 \RequirePackage{etoolbox}
 \RequirePackage{setspace}
 
+\RequirePackage[
+	format=plain,
+	indention=1em,
+	labelformat=parens,
+	labelsep=endash
+]{caption}
 \RequirePackage[strict, autostyle]{csquotes}
 
 \RequirePackage[
@@ -192,7 +198,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newcommand{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} - \nameref*{#1}}}
+\newcommand{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}~-~\nameref*{#1}}}
 \newcommand{\equref}[1]{\hyperref[{#1}]{\autoref*{#1}}}
 \newcommand{\emptypage}{\clearpage\thispagestyle{empty}\mbox{}\clearpage}
 
@@ -263,6 +269,8 @@
 
 \AtBeginEnvironment{abstract}{\clearpage\thispagestyle{empty}}
 \AtEndEnvironment{abstract}{\clearpage}
+
+\AfterEndEnvironment{figure}{\noindent}
 
 \preto\section\clearpage
 
