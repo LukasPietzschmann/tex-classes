@@ -1,6 +1,17 @@
 \ProvidesClass{arbeit}[This class makes writing articles fun again]
 
-\LoadClass[11pt, DIV=12, footinclude=off, headinclude=on, BCOR=0pt, oneside]{scrartcl}
+\LoadClass[
+	11pt,
+	DIV=12,
+	footinclude=off,
+	headinclude=on,
+	BCOR=0pt,
+	oneside,
+	abstract=on,
+	toc=listofnumbered,
+	toc=bibnumbered,
+	toc=indented,
+]{scrartcl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,6 +37,8 @@
 \else
 	\RequirePackage[ngerman]{babel}
 \fi
+
+\addto\captionsngerman{\renewcommand{\abstractname}{Abstract}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,6 +171,7 @@
 \linespread{1.1}
 \setlength{\headsep}{3em}
 \setlength{\skip\footins}{\baselineskip}
+\setcounter{tocdepth}{\subsectiontocdepth}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,19 +192,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} - \nameref*{#1}}}
-\newcommand*{\equref}[1]{\hyperref[{#1}]{\autoref*{#1}}}
-\newcommand{\emptypage}{%
-	\newpage%
-	\thispagestyle{empty}%
-	\mbox{}%
-	\newpage%
+\newcommand{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} - \nameref*{#1}}}
+\newcommand{\equref}[1]{\hyperref[{#1}]{\autoref*{#1}}}
+\newcommand{\emptypage}{\clearpage\thispagestyle{empty}\mbox{}\clearpage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\let\oldtoc\tableofcontents
+\renewcommand{\tableofcontents}{%
+	\clearpage%
+	\thispagestyle{plain}\setcounter{page}{1}\pagenumbering{roman}%
+	\oldtoc%
+	\clearpage%
+	\setcounter{page}{1}\pagenumbering{arabic}
 }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \renewcommand{\maketitle}{
 	\begin{titlepage}
@@ -226,6 +244,7 @@
 		\@uni\break%
 		\if@english@ Course\else Studiengang\fi~\@course%
 	\end{titlepage}
+	\clearpage%
 }
 
 
@@ -241,3 +260,11 @@
 		pdfsubject=\@title
 	}
 }
+
+\AtBeginEnvironment{abstract}{\clearpage\thispagestyle{empty}}
+\AtEndEnvironment{abstract}{\clearpage}
+
+\preto\section\clearpage
+
+\preto\printbibliography\clearpage
+\appto\printbibliography\clearpage

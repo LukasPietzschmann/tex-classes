@@ -18,28 +18,14 @@
 
 \maketitle
 
-\newpage
-
-\thispagestyle{plain}
-\setcounter{page}{1}
-\pagenumbering{roman}
-\tableofcontents
-\newpage
-\listoffigures
-\lstlistoflistings
-
-\newpage
-
-\thispagestyle{empty}
-\section*{Abstract}
+\begin{abstract}
 Here comes my cool and very interesting abstract, that will describe what this paper is all about
 and will definitely make you wanna read it!
+\end{abstract}
+
+\tableofcontents
 
 \emptypage
-
-\thispagestyle{plain}
-\setcounter{page}{1}
-\pagenumbering{arabic}
 
 \section{Section One}
 
@@ -53,5 +39,9 @@ for(int i = 0; i < bracket_ptrs.size(); ++i)
 	utils::insert_into(all_brackets, bracket_ptrs.at(i), i);
 return brackets;
 \end{lstlisting}
+
+\begin{appendix}
+\lstlistoflistings
+\end{appendix}
 
 \end{document}
