@@ -2,7 +2,7 @@
 
 \LoadClass[
 	11pt,
-	DIV=12,
+	DIV=11,
 	footinclude=off,
 	headinclude=on,
 	BCOR=0pt,
