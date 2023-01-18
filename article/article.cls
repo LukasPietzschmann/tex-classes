@@ -198,9 +198,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newcommand{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}~-~\nameref*{#1}}}
-\newcommand{\equref}[1]{\hyperref[{#1}]{\autoref*{#1}}}
-\newcommand{\emptypage}{\clearpage\thispagestyle{empty}\mbox{}\clearpage}
+\newcommand\fullref[1]{\hyperref[{#1}]{\autoref*{#1}~-~\nameref*{#1}}}
+\newcommand\equref[1]{\hyperref[{#1}]{\autoref*{#1}}}
+\newcommand\emptypage{\clearpage\thispagestyle{empty}\mbox{}\clearpage}
+\newcommand\sidenote[1]{\unskip~\marginpar{\hspace{0pt}\raggedright\small\itshape #1}($\rightarrow$)}
+\newcommand\dash{\unskip\nobreak\thinspace\textendash\thinspace\ignorespaces}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
