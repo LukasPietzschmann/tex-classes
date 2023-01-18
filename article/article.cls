@@ -88,38 +88,21 @@
 \setlist[itemize]{itemsep=-0.5\parskip}
 \setlist[description]{style=nextline, font=\normalfont}
 
-\RequirePackage{listings}
-\lstset{
-	mathescape,
-	frame=tb,
-	captionpos=b,
-	basicstyle=\footnotesize\ttfamily,
-	backgroundcolor=\color{white},
-	keywordstyle=\bfseries\ttfamily\color{blue!50},
-	stringstyle=\color{orange!50!black}\ttfamily,
-	commentstyle=\color{gray}\ttfamily,
-	showstringspaces=false,
-	flexiblecolumns=false,
-	tabsize=2,
+\usepackage[newfloat=true]{minted}
+\setminted{
 	numbers=left,
-	numberstyle=\footnotesize,
-	numberblanklines=true,
-	stepnumber=1,
-	float=H,
-	numbersep=10pt,
-	xleftmargin=15pt,
+	autogobble=true,
 	breaklines=true,
-	postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
-	escapeinside={<@}{@>},
-	literate=%
-	{Ã–}{{\"O}}1
-	{Ã„}{{\"A}}1
-	{Ãœ}{{\"U}}1
-	{ÃŸ}{{\ss}}1
-	{Ã¼}{{\"u}}1
-	{Ã¤}{{\"a}}1
-	{Ã¶}{{\"o}}1
-	{~}{{\textasciitilde}}1
+	breakbytoken=true,
+	breakbytokenanywhere=true,
+	breaksymbolleft=\tiny\ensuremath{\textcolor{gray}{\hookrightarrow}},
+	escapeinside=@@,
+	frame=lines,
+	samepage=true,
+	tabsize=2,
+	baselinestretch=1.2,
+	fontsize=\small,
+	numbersep=8pt,
 }
 
 \RequirePackage[hidelinks, linktocpage=true]{hyperref}
@@ -278,3 +261,5 @@
 
 \preto\printbibliography\clearpage
 \appto\printbibliography\clearpage
+
+\preto\listing{\appto\endminted\unskip}

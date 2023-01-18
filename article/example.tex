@@ -33,17 +33,19 @@ and will definitely make you wanna read it!
 \sidenote{This is a nice note}
 \lipsum[2-5]{1}
 \par
-Here comes some code:
-
-\begin{lstlisting}[language=c++, caption=Ooof what a nice peace of code]
-Value* all_brackets = ir_builder->CreateAlloca(utils::get_ptr_type(predef_structures::bracket()), utils::get_integer_constant(bracket_ptrs.size()));
-for(int i = 0; i < bracket_ptrs.size(); ++i)
-	utils::insert_into(all_brackets, bracket_ptrs.at(i), i);
-return brackets;
-\end{lstlisting}
+Here comes some beautiful code highlighted using the \texttt{minted} package:
+\begin{listing}[H]
+\begin{minted}{cpp}
+	Value* all_brackets = ir_builder->CreateAlloca(utils::get_ptr_type(predef_structures::bracket()), utils::get_integer_constant(bracket_ptrs.size()));
+	for(int i = 0; i < bracket_ptrs.size(); ++i)
+		utils::insert_into(all_brackets, bracket_ptrs.at(i), i);
+	return brackets;
+\end{minted}
+\caption{Test}
+\end{listing}
 
 \begin{appendix}
-\lstlistoflistings
+\listoflistings
 \end{appendix}
 
 \end{document}
