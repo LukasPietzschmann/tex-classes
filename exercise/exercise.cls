@@ -209,7 +209,7 @@
 	{\usekomafont{title}\scshape\color{red}{\if@english@ Sheet \else Übungsblatt \fi \@sheet}:~}
 	{\usekomafont{title}\@topic}
 	\hfill
-	{\color{gray}\if@english@ Due to \else Fällig am \fi \@duedate}
+	{\color{gray}\if@english@ Due\else Fällig am\fi~\@duedate}
 	\vspace{1em}
 }
 
