@@ -23,6 +23,11 @@
 \DeclareBoolOption{solution}
 \DeclareBoolOption{uulm}
 
+\DeclareStringOption[45]{leftrotatecmd}
+\DeclareStringOption[225]{rightrotatecmd}
+\DeclareStringOption[0]{leftrotateenv}
+\DeclareStringOption[180]{rightrotateenv}
+
 \ProcessKeyvalOptions*
 
 \if@english@
@@ -232,7 +237,7 @@
 
 \newcommand{\shortsolution}[2]{%
 	\if@solution%
-		#2\rotatebox[origin=c]{45}{\emoji{pencil}}~#1~\rotatebox[origin=c]{225}{\emoji{pencil}}%
+		#2\rotatebox[origin=c]{\@leftrotatecmd}{\emoji{pencil}}~#1~\rotatebox[origin=c]{\@rightrotatecmd}{\emoji{pencil}}%
 	\fi
 }
 
@@ -248,12 +253,12 @@
 	\newenvironment{solution}{
 		\hfill\break%
 		\begin{samepage}
-		\emoji{pencil}%
+		\rotatebox[origin=c]{\@leftrotateenv}{\emoji{pencil}}%
 		\begin{addmargin}[1em]{1em}%
 	}{
 		\end{addmargin}
 		\end{samepage}
-		\rotatebox[origin=c]{180}{\reflectbox{\emoji{pencil}}}%
+		\rotatebox[origin=c]{\@rightrotateenv}{\reflectbox{\emoji{pencil}}}%
 	}
 \else
 	\excludecomment{solution}

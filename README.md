@@ -18,6 +18,9 @@ This class provides some settings you can tweak:
 	- The environment `solution`: This is intended for longer solutions, that span more than one lines.
 	- The command `\onelinesolution`: This should be used for short solutions that only span one line.
 	- The command `\inlinesolution`: For even shorter solutions, this is the way to go.
+- To indicate a solution, a pencil emoji is used. Depending on your font your pencil emoji might be rotated differently than mine. You can use the following settings to correct the rotation:
+	- `leftrotatecmd`, `rightrotatecmd`: They control the rotation of the left and right pencil for the `\onelinesolution` and `inlinesolution` commands.
+	- `leftrotateenv`, `rightrotateenv`: They control the rotation of the upper and lower pencil of the `solution` environment.
 
 `\onelinesolution` and `\inlinesolution` only differ in one small detail. The first one prints it's content in a new line, while the latter does not do this.
 
