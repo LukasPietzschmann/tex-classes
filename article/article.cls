@@ -97,19 +97,23 @@
 	breakbytoken=true,
 	breakbytokenanywhere=true,
 	breaksymbolleft=\tiny\ensuremath{\textcolor{gray}{\hookrightarrow}},
-	escapeinside=@@,
 	frame=lines,
 	samepage=true,
 	tabsize=2,
 	baselinestretch=1.2,
 	fontsize=\small,
 	numbersep=8pt,
+	style=rainbow_dash
+	% style=tango
 }
 
 \RequirePackage{nowidow}
 \setnowidow[5]
 \setnoclub[4]
+
+\RequirePackage[nospace]{varioref}
 \RequirePackage[hidelinks, linktocpage=true]{hyperref}
+\RequirePackage{cleveref}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,7 +189,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newcommand\fullref[1]{\hyperref[{#1}]{\autoref*{#1}~-~\nameref*{#1}}}
+\renewcommand\fullref[1]{\hyperref[{#1}]{\autoref*{#1}~- \nameref*{#1}~\vpageref{#1}}}
 \newcommand\equref[1]{\hyperref[{#1}]{\autoref*{#1}}}
 \newcommand\emptypage{\clearpage\thispagestyle{empty}\mbox{}\clearpage}
 \newcommand\sidenote[1]{\unskip~\marginpar{\hspace{0pt}\raggedright\small\itshape #1}($\rightarrow$)}
@@ -254,6 +258,16 @@
 		pdftitle=\@title,
 		pdfsubject=\@title
 	}
+}
+
+\AtBeginDocument{
+	\newcommand\reftext{(\if@english@ P\else S\fi.~\thevpagerefnum)}
+	\renewcommand\reftextbefore{\reftext}
+	\renewcommand\reftextfacebefore{\reftext}
+	\renewcommand\reftextafter{\reftext}
+	\renewcommand\reftextfaceafter{\reftext}
+	\renewcommand\reftextfaraway[1]{\reftext}
+	\renewcommand\reftextcurrent{}
 }
 
 \AtBeginEnvironment{abstract}{\clearpage\thispagestyle{empty}}
