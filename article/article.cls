@@ -218,9 +218,8 @@
 		\vspace{20mm}%
 		\hrule%
 		\begin{spacing}{2}%
-		{\Huge\bfseries\@title}%
+			{\Huge\bfseries\@title}%
 		\end{spacing}%
-		\vspace{0.3\baselineskip}%
 		\hrule%
 		\vspace{10mm}%
 		{\Large\@type}%
@@ -274,8 +273,6 @@
 
 \AtBeginEnvironment{abstract}{\clearpage\thispagestyle{empty}}
 \AtEndEnvironment{abstract}{\clearpage}
-
-\AfterEndEnvironment{figure}{\noindent}
 
 \preto\section\clearpage
 
