@@ -49,6 +49,7 @@
 \RequirePackage{microtype}
 \RequirePackage{etoolbox}
 \RequirePackage{setspace}
+\RequirePackage{lastpage}
 
 \RequirePackage[
 	format=plain,
@@ -173,7 +174,7 @@
 \chead{}
 \ohead{\headmark}
 \ifoot{}
-\cfoot{\thepage}
+\cfoot{\thepage~/~\pageref{LastPage}}
 \ofoot{}
 
 
