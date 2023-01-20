@@ -86,7 +86,7 @@
 	node distance = 5mm,
 }
 
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 \setlist[enumerate]{itemsep=-0.5\parskip}
 \setlist[itemize]{itemsep=-0.5\parskip}
 \setlist[description]{style=nextline, font=\normalfont}
@@ -197,6 +197,7 @@
 \newcommand\note[1]{\if@sidenote\sidenote{#1}\else\footnote{#1}\fi}
 \newcommand\sidenote[1]{\unskip~\marginpar{\hspace{0pt}\raggedright\small\itshape#1}(\textrightarrow)}
 
+\newcommand\cpp{C\nolinebreak\kern-0.17em\raise0.20ex\hbox{+\kern-0.05em+}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -280,3 +281,6 @@
 \appto\printbibliography\clearpage
 
 \preto\listing{\appto\endminted\unskip}
+
+\preto\tableofcontents{\microtypesetup{protrusion=false}}
+\appto\tableofcontents{\microtypesetup{protrusion=true}}
