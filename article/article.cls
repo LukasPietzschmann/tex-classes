@@ -106,6 +106,9 @@
 	numbersep=8pt,
 }
 
+\RequirePackage{nowidow}
+\setnowidow[5]
+\setnoclub[4]
 \RequirePackage[hidelinks, linktocpage=true]{hyperref}
 
 
