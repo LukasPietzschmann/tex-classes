@@ -167,7 +167,7 @@
 
 
 \setparsizes{1em}{\baselineskip}{\parfillskip}
-\linespread{1.1}
+\setstretch{1.1}
 \setlength{\headsep}{3em}
 \setlength{\skip\footins}{\baselineskip}
 \setcounter{tocdepth}{\subsectiontocdepth}
@@ -220,7 +220,7 @@
 		\begin{spacing}{2}%
 		{\Huge\bfseries\@title}%
 		\end{spacing}%
-		\vspace{0.5\baselineskip}%
+		\vspace{0.3\baselineskip}%
 		\hrule%
 		\vspace{10mm}%
 		{\Large\@type}%

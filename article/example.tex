@@ -21,6 +21,7 @@
 \begin{abstract}
 Here comes my cool and very interesting abstract, that will describe what this paper is all about
 and will definitely make you wanna read it!
+\lipsum[2-3]
 \end{abstract}
 
 \tableofcontents
@@ -29,9 +30,9 @@ and will definitely make you wanna read it!
 
 \section{Section One}
 
-\lipsum[1]{1}
-\sidenote{This is a nice note}
-\lipsum[2-5]{1}
+\lipsum[1-3]
+Here comes a note\note{This is a nice note than can be a foot- or margin-note}
+\lipsum[1]
 \par
 Here comes some beautiful code highlighted using the \texttt{minted} package:
 \begin{listing}[H]
@@ -40,9 +41,16 @@ Here comes some beautiful code highlighted using the \texttt{minted} package:
 	for(int i = 0; i < bracket_ptrs.size(); ++i)
 		utils::insert_into(all_brackets, bracket_ptrs.at(i), i);
 	return brackets;
+	int test(){
+		return 1;
+	}
 \end{minted}
-\caption{Test}
+\caption{Nice Code}
+\label{lst:test}
 \end{listing}
+\lipsum[1-4]\par
+Let's now reference \fullref{lst:test}. You can see how nice this reference looks. What's awesome about this is that we display the page
+number of the referenced thing. But we do so only of the reference if not on the same page.
 
 \begin{appendix}
 \listoflistings
