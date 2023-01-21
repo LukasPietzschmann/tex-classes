@@ -41,6 +41,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\RequirePackage{colors}
 \RequirePackage{fontspec}
 \RequirePackage{microtype}
 
@@ -52,9 +53,6 @@
 \RequirePackage{comment}
 \RequirePackage{float}
 
-\RequirePackage[table]{xcolor}
-\definecolor{red}{HTML}{a51d2d}
-
 \RequirePackage{listings}
 \RequirePackage[verbatim=true]{lstfiracode}
 \lstset{
@@ -62,7 +60,7 @@
 	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 	style=FiraCodeStyle,
 	basicstyle=\ttfamily,
-	commentstyle=\color{gray}\itshape,
+	commentstyle=\color{darkgray}\itshape,
 	keywordstyle=\color{red}\bfseries,
 	escapeinside={<!}{!>},
 }
@@ -80,7 +78,7 @@
 \tikzstyle{roundednode} = [squarenode, rounded corners=1mm]
 \tikzstyle{roundnode} = [squarenode, circle]
 \tikzstyle{arrow} = [thick,->,>=stealth]
-\tikzstyle{textarrow} = [awesomegray,shorten >=1mm,shorten <=1mm,thick,->,-{Kite[open]}]
+\tikzstyle{textarrow} = [darkgray,shorten >=1mm,shorten <=1mm,thick,->,-{Kite[open]}]
 \tikzstyle{thickarrow} = [
 	thick,
 	decoration={markings, mark=at position 1 with {\arrow[scale=2]{open triangle 60}}},
@@ -214,7 +212,7 @@
 	{\usekomafont{title}\scshape\color{red}{\if@english@ Sheet \else Übungsblatt \fi \@sheet}:~}
 	{\usekomafont{title}\@topic}
 	\hfill
-	{\color{gray}\if@english@ Due\else Fällig am\fi~\@duedate}
+	{\color{darkgray}\if@english@ Due\else Fällig am\fi~\@duedate}
 	\vspace{1em}
 }
 
@@ -230,7 +228,7 @@
 	\fi
 	\vspace{2em}
 	\relax\parbox\linewidth{
-		{\usekomafont{disposition}\ifx#1\empty\if@english@ Exercise\else Aufgabe\fi~\arabic{excounter}\else#1\fi}\quad{\usekomafont{subsection}\textcolor{gray}{#2}}
+		{\usekomafont{disposition}\ifx#1\empty\if@english@ Exercise\else Aufgabe\fi~\arabic{excounter}\else#1\fi}\quad{\usekomafont{subsection}\textcolor{darkgray}{#2}}
 	}
 	\par
 }{\par}

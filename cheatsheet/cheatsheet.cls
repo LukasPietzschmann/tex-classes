@@ -45,6 +45,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\RequirePackage{colors}
 \RequirePackage{fontspec}
 \RequirePackage{microtype}
 \RequirePackage{etoolbox}
@@ -52,9 +53,6 @@
 \RequirePackage{float}
 
 \RequirePackage[strict, autostyle]{csquotes}
-
-\RequirePackage[table]{xcolor}
-\definecolor{red}{HTML}{a51d2d}
 
 \RequirePackage[framemethod=TikZ]{mdframed}
 
@@ -66,7 +64,7 @@
 	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 	style=FiraCodeStyle,
 	basicstyle=\ttfamily,
-	commentstyle=\color{gray}\itshape,
+	commentstyle=\color{darkgray}\itshape,
 	keywordstyle=\color{red}\bfseries,
 	escapeinside={<!}{!>},
 }

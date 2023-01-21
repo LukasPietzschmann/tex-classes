@@ -47,6 +47,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\RequirePackage{colors}
 \RequirePackage{fontspec}
 \RequirePackage{microtype}
 \RequirePackage{etoolbox}
@@ -68,8 +69,6 @@
 ]{biblatex}
 
 \RequirePackage[automark]{scrlayer-scrpage}
-
-\RequirePackage[table]{xcolor}
 
 \RequirePackage{wrapfig}
 \RequirePackage{float}

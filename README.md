@@ -1,5 +1,8 @@
 This is my little (and hopefully growing) collection of TeX classes I use.
 
+# General Infos
+- You also need `colors.sty` in the same directory as the `.cls` file
+
 # article
 This class is based on koma-scrips scrartcl. I mainly used it for my bachelors thesis so it's kinda tailored to this.
 ### Options
