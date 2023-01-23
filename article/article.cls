@@ -31,6 +31,7 @@
 }
 
 \DeclareBoolOption{sidenote}
+\DeclareBoolOption{awesomeminted}
 
 \ProcessKeyvalOptions*
 
@@ -104,9 +105,8 @@
 	baselinestretch=1.2,
 	fontsize=\small,
 	numbersep=8pt,
-	style=rainbow_dash
-	% style=tango
 }
+\if@awesomeminted\usemintedstyle{awesome}\else\usemintedstyle{tango}\fi
 
 \RequirePackage{nowidow}
 \setnowidow[5]

@@ -9,6 +9,7 @@ This class is based on koma-scrips scrartcl. I mainly used it for my bachelors t
 This class provides some settings you can tweak:
 - Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
 - Notes: This class provides the `note` macro which typesets it's argument as a footnote. You can pass `sidenote` to the class if you prefer your notes on the right margin.
+- Minted style: You can make minted (pygments) use the same colors as this class does. In order to do this, pass `awesomeminted` to the class and follow the instructions in [pygments_style/README.md](https://github.com/LukasPietzschmann/tex-classes/tree/master/pygments_style/README.md).
 
 Look at ![example.pdf](https://github.com/LukasPietzschmann/tex-classes/blob/master/article/example.pdf) to see an example document and at
 ![example.tex](https://github.com/LukasPietzschmann/tex-classes/blob/master/article/example.tex) to see how it was made.
