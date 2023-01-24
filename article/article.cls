@@ -54,6 +54,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{setspace}
 \RequirePackage{lastpage}
+\RequirePackage{unicode-math}
 
 \RequirePackage[
 	format=plain,
@@ -157,6 +158,7 @@
 \setmainfont{Latin Modern Roman}
 \setsansfont{Latin Modern Sans}
 \setmonofont{Inconsolata}
+\setmathfont{Latin Modern Math}
 \setkomafont{pagehead}{\rmfamily\upshape}
 \setkomafont{pagefoot}{\rmfamily\upshape}
 

@@ -44,7 +44,7 @@ Here comes some beautiful code highlighted using the \texttt{minted} package:
 \begin{listing}[H]
 \begin{minted}{cpp}
 	Value* all_brackets = ir_builder->CreateAlloca(utils::get_ptr_type(predef_structures::bracket()), utils::get_integer_constant(bracket_ptrs.size()));
-	for(int i = 0; i < bracket_ptrs.size(); ++i)
+	for(int i = 0; i <= bracket_ptrs.size(); ++i)
 		utils::insert_into(all_brackets, bracket_ptrs.at(i), i);
 	return brackets;
 	int test(){
@@ -57,6 +57,15 @@ Here comes some beautiful code highlighted using the \texttt{minted} package:
 \lipsum[1-4]\par
 Let's now reference the \cpp~code from \fullref{lst:test}. You can see how nice this reference looks. What's awesome about this is that we display the page
 number of the referenced thing. But we do so only of the reference if not on the same page.
+
+\section{Math}
+And finally a nice equation. I have absolutely no idea what that even means. But hey, it looks cool.
+\begin{equation}
+	\int\limits_{x^2 + y^2 \leq R^2}f(x,y)\,dx\,dy
+	= \int_{\theta=0}^{2\pi} \int_{r=0}^R
+	f(r\cos\theta,r\sin\theta) r\,dr\,d\theta
+\end{equation}
+\lipsum[1-2]
 
 \begin{appendix}
 \listoflistings
