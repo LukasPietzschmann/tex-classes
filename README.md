@@ -48,5 +48,5 @@ This class provides some settings you can tweak:
 Look at ![example.pdf](https://github.com/LukasPietzschmann/tex-classes/blob/master/cheatsheet/example.pdf) to see an example document and at
 ![example.tex](https://github.com/LukasPietzschmann/tex-classes/blob/master/cheatsheet/example.tex) to see how it was made.
 
-## Related stuff
+# Related stuff
 If you're looking for a beamer theme in the same style as the classes here, you may want to take a look at [awesome-beamer](https://github.com/LukasPietzschmann/awesome-beamer).
