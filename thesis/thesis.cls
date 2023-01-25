@@ -1,4 +1,4 @@
-\ProvidesClass{arbeit}[This class makes writing articles fun again]
+\ProvidesClass{thesis}[This class makes writing a thesis fun again]
 
 \LoadClass[
 	11pt,
@@ -92,7 +92,7 @@
 \setlist[itemize]{itemsep=-0.5\parskip}
 \setlist[description]{style=nextline, font=\normalfont}
 
-\usepackage[newfloat=true]{minted}
+\usepackage[newfloat=true,cache=false]{minted}
 \setminted{
 	numbers=left,
 	autogobble=true,
