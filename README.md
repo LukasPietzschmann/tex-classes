@@ -14,6 +14,17 @@ This class provides some settings you can tweak:
 Look at ![example.pdf](https://github.com/LukasPietzschmann/tex-classes/blob/master/thesis/example.pdf) to see an example document and at
 ![example.tex](https://github.com/LukasPietzschmann/tex-classes/blob/master/thesis/example.tex) to see how it was made.
 
+# report
+This class is based on koma-scrips scrartcl.
+### Options
+This class provides some settings you can tweak:
+- Language: Possible values are `english` or `german`. This changes the value passed to babel and csquotes. If none of both is selected, `german` is used.
+- Minted style: You can make minted (pygments) use the same colors as this class does. In order to do this, pass `awesomeminted` to the class and follow the instructions in [pygments_style/README.md](https://github.com/LukasPietzschmann/tex-classes/tree/master/pygments_style/README.md).
+- Abstract: If you don't want your abstract to be typset in the two-column-layout, pass the option `wideabstract` to the class. This makes the abstract span both columns.
+
+Look at ![example.pdf](https://github.com/LukasPietzschmann/tex-classes/blob/master/report/example.pdf) to see an example document and at
+![example.tex](https://github.com/LukasPietzschmann/tex-classes/blob/master/report/example.tex) to see how it was made.
+
 # exercise
 This class is pretty loosely based on koma-scrips scrartcl. I tried to make it look friendly, so the exercises on it can be even more evil ;)
 ### Options
