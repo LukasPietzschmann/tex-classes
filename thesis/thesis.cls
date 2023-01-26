@@ -105,7 +105,8 @@
 	tabsize=2,
 	baselinestretch=1.2,
 	fontsize=\small,
-	numbersep=8pt,
+	numbersep=6pt,
+	highlightcolor=lightgray!50
 }
 \if@awesomeminted\usemintedstyle{awesome}\else\usemintedstyle{tango}\fi
 
