@@ -59,6 +59,12 @@
 \RequirePackage{unicode-math}
 \RequirePackage{cuted}
 
+\newcommand\copyrightfootnoterule{\kern -3pt \hrule width \columnwidth height 0.7pt \kern 2.6pt}
+\renewcommand\footnoterule{\kern -3pt \hrule width 3cm height 0.7pt \kern 2.6pt}
+\RequirePackage[para*]{manyfoot}
+\SelectFootnoteRule[2]{copyright}
+\DeclareNewFootnote[para]{copyright}
+
 \RequirePackage[
 	format=plain,
 	indention=1em,
@@ -139,6 +145,10 @@
 	\newcommand{\@institute}{#1}
 }
 
+\renewcommand{\copyright}[1]{
+	\newcommand{\@copyrightnotice}{#1}
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,6 +221,12 @@
 		\end{center}%
 		\if@wideabstract\else\vspace{3em}\fi
 	\end{strip}%
+	\ifdef{\@copyrightnotice}{\Footnotetextcopyright{}{
+		\emph\@author,
+		\emph\@institute,
+		\emph\@uni\\
+		\@copyrightnotice
+	}}{}
 }
 
 \let\oldabstract\abstract
