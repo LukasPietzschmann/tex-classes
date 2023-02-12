@@ -1,8 +1,8 @@
-\ProvidesClass{report}[This class makes writing a thesis fun again]
+\ProvidesClass{report}[This class makes writing a report fun again]
 
 \LoadClass[
 	11pt,
-	DIV=11,
+	DIV=13,
 	footinclude=off,
 	headinclude=on,
 	BCOR=0pt,
@@ -75,7 +75,7 @@
 
 \RequirePackage[
 	backend=biber,
-	style=alphabetic,
+	style=numeric,
 	sorting=ynt
 ]{biblatex}
 
